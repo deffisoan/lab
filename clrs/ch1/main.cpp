@@ -1,4 +1,4 @@
-#include "insert_sort.h"
+#include "sort.h"
 
 int main() {
     std::vector<int> m = {1, 4, 3};

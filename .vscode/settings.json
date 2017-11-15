@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "wait.h": "c",
+        "apue.h": "c",
+        "errno.h": "c",
+        "termios.h": "c",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "vector": "cpp",
+        "__hash_table": "cpp",
+        "array": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "unordered_map": "cpp"
+    }
+}
