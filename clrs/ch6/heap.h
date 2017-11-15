@@ -8,6 +8,7 @@
 
 using std::vector;
 using std::swap;
+using std::cerr;
 
 template <typename T>
 class Heap {
@@ -18,6 +19,8 @@ public:
     void heapify(vector<T>& m, int i);
     void heap_sort(vector<T>& m);
     T  heap_extract_max(vector<T>&m);
+    void increase_key(vector<T>&m, int i, T key);
+    void insert_key(vector<T>&m, T key);
 private:
     vector<T> nodes;
     int heap_size;
@@ -73,5 +76,24 @@ T Heap<T>::heap_extract_max(vector<T> &m) {
     heap_size--;
     heapify(m, 0);
     return max;
+}
+
+template<typename T>
+void Heap<T>::increase_key(vector<T> &m, int i, T key) {
+    if(key < m[i-1]) {
+        cerr << "invalid value" << std::endl;
+    }
+    m[i-1] = key;
+    while(i > 1 && m[i/2] < m[i]) {
+        swap(m[i-1], m[i/2]);
+        i = m/2;
+    }
+}
+
+template<typename T>
+void Heap<T>::insert_key(vector<T>& m, T key) {
+    heap_size++;
+    m[heap_size] = -1;
+    increase_key(m, heap_size, key);
 }
 #endif
